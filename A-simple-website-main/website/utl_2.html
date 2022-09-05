@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <meta charset="utf-8"> -->
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>form actions</title>   
+     <link rel="icon" type="image/x-icon" href="pen.jpg"/>        
+	<style type="text/css">
+		body{
+			background-color: lightblue;
+		}
+		h1{
+			color: magenta;
+		}
+    * {
+            box-sizing: border-box;
+        }
+      div {
+            padding: 10px;
+            background-color: #f6f6f6;
+            overflow: hidden;
+        }
+      input[type=text], textarea, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type=button]{ 
+            width: auto;
+            float: right;
+            cursor: pointer;
+            padding: 7px;
+        }
+	</style>
+</head>
+<body>
+<marquee><h1>Applay for UTL Scholaship 2022</h1></marquee>
+<h2>UTL Sudent Scholaship Details</h2>
+
+    
+<p title="Html">Read Instructions Here</p>
+<iframe src="u1.html" name="iframeexample"style="color: red; background-color: green; width: 1300px; height: 300px"></iframe>
+    
+ <p>
+ <a href="u2.html" target="iframeexample"><b>2nd Instruction &nbsp</b></a>
+ <a href="http://www.utltraining.com/whoweare/" target="iframeexample"><b>3rd Instruction &nbsp</b></a>
+ </p>
+    
+<!-- <form id="myForm">
+  <label for="fname">First Name: </label>
+  <input type="name" id="fname" name="user-fname">
+ <hr>
+
+  <label for="lname">Last Name: </label>
+  <input type="name" id="lname" name="user-lname">
+  <hr>
+
+  <label for="user-password">Password: </label>
+  <input type="password" id="user-password" name="user-password">
+  <hr>
+
+  <label for="user-password">Re-Ener Password: </label>
+  <input type="password" id="userr-passwords" name="userr-password">
+ <hr>
+
+  <label for="address">Address: </label>
+  <input type="Address" id="add" name="user-address">
+  <hr>
+
+  <label for="gender">Select gender: </label>
+  <input type="radio" name="r1" id="r1"> Male
+<input type="radio" name="r2" id="r2"> Female
+  <hr>
+
+  <label for="gender">Select Proof: </label>
+  <input type="checkbox" name="a1" id="a1">Adhaar
+<input type="checkbox" name="b1" id="b1">Pan 
+<input type="checkbox" name="c1" id="c1">Voter Id
+<input type="checkbox" name="d1" id="d1">Ration Card 
+  <hr>
+ 
+  <label for="nname">Enter any Id Proof number: </label>
+  <input type="nname" id="id1" name="user-nname">
+<hr>
+
+
+  <label for="dame">Enter year income: </label>
+  <input type="dame" id="id2" name="user-dame">
+  <hr>
+
+
+  <label for="dame">Upload any Id proof: </label>
+  <input type="File" id="id3" name ="F1">
+  <hr>
+
+
+<input type="button" onclick="myFunction()" value="Reset"> 
+</form>
+<script type="text/javascript">
+  function myFunction(){
+    document.getElementById('myForm').reset();
+  }
+</script>
+<hr>
+
+<input type="Submit" name="b1" value="submit"> 
+        <div>
+            <input type="button" id="bt" value="Submit" onclick="saveFile()" />
+        </div>
+
+  <hr> --> 
+
+<div>
+
+        <div>
+            <input type="text" id="txtName" placeholder="Enter your full name" />
+        </div>
+        <div>
+            <input type="text" id="txtPhone" placeholder="Enter your Phone no." />
+        </div>
+        <div>
+            <input type="text" id="txtEmail" placeholder="Enter your email address" />
+        </div>
+        <div>
+            <input type="text" id="txtAdd" placeholder="Enter your full address" />
+        </div>
+        <div>
+            <select id="selCountry">
+                <option selected value="">-- Choose the country --</option>
+                <option value="India">India</option>
+                <option value="Japan">Japan</option>
+                <option value="USA">USA</option>
+                <option value="USA">Russi</option>
+                <option value="USA">Canada</option>
+                <option value="USA">USA</option>
+            </select>
+        </div>
+        <div>
+            <textarea id="msg" name="msg" placeholder="Write something about yourself ..." style="height:100px"></textarea>
+        </div>
+
+        <div>
+            <input type="button" id="bt" class="btn" style="background-color: yellow;" value="Submit form" onclick="saveFile()" />
+        </div>
+
+<input type="button" id="bt"  style="background-color: yellowgreen;" value="Finish" onclick="myFunction()" />
+<!-- <button type="button" id="bt" onclick="onfunction()">Finish</button> -->
+<!-- <script>
+function onfunction(){
+document.write("Submit Successful... <br>");
+document.write("Thank You <br>");
+}
+</script> -->
+<!-- <button style="background-color: yellowgreen;" onclick="myFunction()">Finish</button> -->
+
+<script>
+function myFunction() {
+  alert("Submit Successful... ");
+  alert("Thank You ");
+}
+</script>
+</div>
+
+</body>
+<script>
+    let saveFile = () => {
+      
+        // Get the data from each element on the form.
+      const name = document.getElementById('txtName');
+        const phone = document.getElementById('txtPhone');
+        const email = document.getElementById('txtEmail');
+        const add = document.getElementById('txtAdd');
+        const country = document.getElementById('selCountry');
+        const msg = document.getElementById('msg');
+        
+        // This variable stores all the data.
+        let data = 
+            '\r Name: ' + name.value + ' \r\n ' + 
+            'Phone: ' +phone.value + ' \r\n ' + 
+            'Email: ' + email.value + ' \r\n ' + 
+            'Address: ' + add.value + ' \r\n ' + 
+            'Country: ' + country.value + ' \r\n ' + 
+            'Message: ' + msg.value;
+        
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+        const sFileName = 'formData.txt';    // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    }
+</script>
+<!-- <script>
+    let saveFile = () => {
+      
+        // Get the data from each element on the form.
+        const fname = document.getElementById('fname');
+        const lname = document.getElementById('lname');
+        const usr-pass = document.getElementById('user-password');
+        const usr-passs = document.getElementById('userr-passwords');
+        const address = document.getElementById('add');
+        const gender1 = document.getElementById('r1');
+        const gender2 = document.getElementById('r2');
+        const adhar = document.getElementById('a1');
+        const pan = document.getElementById('b1');
+        const voter = document.getElementById('c1');
+        const ration = document.getElementById('d1');
+        const proof = document.getElementById('id1');
+        const income = document.getElementById('id2');
+        const upload = document.getElementById('id3');
+        
+        // This variable stores all the data.
+        let data = 
+            '\r Fname: ' + fname.value + ' \r\n ' + 
+            'Lname: ' +lname.value + ' \r\n ' + 
+            'User-password: ' +usr-pass.value + ' \r\n ' +
+            'User-passwords: ' +usr-passs.value + ' \r\n ' + 
+            'Address: ' +address.value + ' \r\n ' +
+            'Gender1: ' +gender1.value + ' \r\n ' + 
+            'Gender2: ' +gender2.value + ' \r\n ' +
+            'Adhar: ' +adhar.value + ' \r\n ' + 
+            'Pan: ' +pan.value + ' \r\n ' +
+            'Voter: ' +voter.value + ' \r\n ' + 
+            'Ration: ' +ration.value + ' \r\n ' +
+            'Proof: ' +proof.value + ' \r\n ' + 
+            'Income: ' +income.value + ' \r\n ' +
+            'Message: ' + upload.value;
+        
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+        const sFileName = 'formData.txt';    // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    }
+</script> -->
+
+</html>
